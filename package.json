@@ -1,0 +1,15 @@
+{
+  "name": "avocado_tost",
+  "version": "1.0.0",
+  "description": "Avocado Tost App - Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "hellensoloviy",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}
