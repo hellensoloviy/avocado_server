@@ -37,6 +37,17 @@ var server = http.createServer(function (req, res) {   //create web server
 
         res.write(JSON.stringify({ message: "Avocado Toast" }));
         res.end();
+    } else if (req.url === '/randomInfo') {
+
+        //not so random for now :)
+        var person = require('./data.js');
+        let responseMessage = (person.firstName + ' ' + person.lastName + ' likes ' +person.favouriteFood);
+
+        //result should be like: {"message":"Avocado Toast","randomInfoMessage":"James Bond likes Avocado toast"}
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.write(JSON.stringify({ message: "Avocado Toast",
+                                         randomInfoMessage: responseMessage}));
+        res.end();
     }
     else
         res.end('Invalid Request!');
