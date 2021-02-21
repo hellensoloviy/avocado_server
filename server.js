@@ -1,14 +1,26 @@
+
 var express = require('express');
+const CoffeeScript = require("coffeescript");
 var app = express();
 
-//
+app.set('view engine', 'pug')
+
+//template for home page
 app.get('/', function (req, res) {
-    res.render('index', { title: 'Hey', message: 'Hello there!' })
+    res.render('index', { title: 'Home', message: 'You are now at the avocado toast world' })
 })
 
 
+app.get('/tutorial', function (req, res) {
+    res.render('tutorial1', { name: 'Avocado', desc: 'Hello there! Its me, your Avocado! You can make a toast with me.' })
+})
+
+app.get('/tutorialSecond', function (req, res) {
+    res.render('tutorial2', { })
+})
+
 //with db
-app.get('/', function (req, res) {
+app.get('/getUsers', function (req, res) {
 
     var sql = require("mssql");
 
